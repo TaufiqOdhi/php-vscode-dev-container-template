@@ -1,0 +1,13 @@
+{
+  "name": "template/php-vscode-dev-container",
+  "description": "A Docker-based PHP development environment.",
+  "type": "project",
+  "require": {
+    "php": "^8.4",
+    "ext-pdo": "*",
+    "ext-pdo_mysql": "*"
+  },
+  "scripts": {
+    "lint": "php -l public/index.php"
+  }
+}
