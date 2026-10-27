@@ -47,6 +47,18 @@ The home page is a status page and should say **Database connected** once the st
 
 You can use this workflow without running `docker compose up` first; VS Code starts the Compose services. Closing the Dev Container stops the Compose stack, including services started manually. Database data persists.
 
+### Install Codex CLI
+
+In the Dev Container terminal, install the standalone Codex CLI:
+
+```sh
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+```
+
+Start a new terminal if `codex` is not yet on your PATH, then run `codex` from a project directory and follow the sign-in prompts. See the [official installation guide](https://learn.chatgpt.com/docs/codex/cli) for details.
+
+The Dev Container creates `codex-sdk/` in this template directory and mounts it as `/home/vscode/.codex`. Codex settings, sign-in data, and sessions stored there persist across container rebuilds and are separate from the host's `~/.codex`. The directory is ignored by Git; keep it private because it may contain credentials. The CLI installation itself is inside the container, so rerun the installation command after rebuilding it.
+
 Ports are published on the Docker host's loopback interface. If Docker runs on a remote machine, forward its published ports to your local machine using your remote connection's port forwarding.
 
 ## Working with projects

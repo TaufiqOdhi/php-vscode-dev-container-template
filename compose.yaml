@@ -10,6 +10,7 @@ services:
     volumes:
       - ./workspace:/workspace
       - ./public:/var/www/html/public:ro
+      - ./codex-sdk:/home/vscode/.codex
     environment:
       DB_HOST: db
       DB_PORT: "3306"
