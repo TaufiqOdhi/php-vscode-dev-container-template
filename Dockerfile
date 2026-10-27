@@ -14,6 +14,8 @@ RUN apt-get update \
         libpng-dev \
         libzip-dev \
         unzip \
+        libxkbcommon0 \
+        bubblewrap \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j"$(nproc)" \
         bcmath exif gd intl mbstring mysqli opcache pdo_mysql zip \
@@ -27,5 +29,9 @@ RUN apt-get update \
 COPY docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY docker/php/development.ini /usr/local/etc/php/conf.d/99-development.ini
 COPY docker/php/xdebug.ini /usr/local/etc/php/conf.d/99-xdebug-settings.ini
+
+USER vscode
+
+RUN curl -fsSL https://chatgpt.com/codex/install.sh | sh
 
 WORKDIR /var/www/html
