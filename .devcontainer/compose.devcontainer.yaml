@@ -1,0 +1,8 @@
+services:
+  app:
+    build:
+      # VS Code generates a Dockerfile in the host temporary directory.
+      # Compose 5.5/5.6 needs that directory as a build context to grant
+      # Buildx read access; the application Dockerfile does not use it.
+      additional_contexts:
+        devcontainer_cli_temp: ${DEVCONTAINER_CLI_TMPDIR:-${TMPDIR:-${TMP:-${TEMP:-/tmp}}}}

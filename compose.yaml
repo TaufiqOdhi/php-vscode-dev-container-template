@@ -1,5 +1,6 @@
 services:
   app:
+    image: ghcr.io/taufiqodhi/php-vscode-dev-container-template
     build:
       context: .
       dockerfile: Dockerfile

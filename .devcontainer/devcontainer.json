@@ -1,6 +1,9 @@
 {
   "name": "PHP + Apache + MariaDB",
-  "dockerComposeFile": "../compose.yaml",
+  "dockerComposeFile": [
+    "../compose.yaml",
+    "compose.devcontainer.yaml"
+  ],
   "service": "app",
   "workspaceFolder": "/var/www/html",
   "remoteUser": "vscode",
