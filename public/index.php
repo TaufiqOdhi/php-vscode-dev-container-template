@@ -64,7 +64,7 @@ function escape(string $value): string
 <main>
     <div class="eyebrow">Docker &middot; PHP &middot; VS Code</div>
     <h1>Your PHP workspace is ready.</h1>
-    <p class="lead">Apache is serving this page from <code>public/index.php</code>. Edit it and refresh your browser to get started.</p>
+    <p class="lead">Apache is running. Add your projects under <code>workspace/</code> to start developing.</p>
 
     <section class="card" aria-labelledby="status-heading">
         <h2 id="status-heading">Environment</h2>
@@ -77,6 +77,7 @@ function escape(string $value): string
         <?php endif; ?>
     </section>
 
+    <p>Open a project with a <code>public/</code> directory at <code>/projects/&lt;project&gt;/public/</code>.</p>
     <p>Open phpMyAdmin at <a href="http://localhost:<?= $phpMyAdminPort ?>">localhost:<?= $phpMyAdminPort ?></a> using the database credentials in <code>.env</code>.</p>
     <p>See <code>README.md</code> for setup, database access, Composer, and debugging.</p>
 </main>

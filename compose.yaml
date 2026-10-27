@@ -6,8 +6,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "127.0.0.1:${APP_PORT:-8080}:80"
+    working_dir: /workspace
     volumes:
-      - .:/var/www/html
+      - ./workspace:/workspace
+      - ./public:/var/www/html/public:ro
     environment:
       DB_HOST: db
       DB_PORT: "3306"

@@ -5,4 +5,5 @@
 .vscode
 vendor
 node_modules
+workspace
 *.log
